@@ -1,2 +1,3 @@
 # 57_List_inChainOfNodes
-Implementation of linked lists. Credit given to Mohidul Abedin for some thinking.
+Implementation of linked lists. 
+Began with framework in SolutionHolmes

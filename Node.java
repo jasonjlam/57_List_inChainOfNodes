@@ -14,10 +14,11 @@ public class Node {
      */
     public Node( Object cargoReference) {
         this.cargoReference = cargoReference;
+        // default value is fine for Node.next
     }
     public Node( Object cargoReference, Node referenceToNextNode) {
-         this(cargoReference);
-         this.referenceToNextNode = referenceToNextNode;
+        this( cargoReference);
+        this.referenceToNextNode = referenceToNextNode;
     }
 
     /**
@@ -45,7 +46,7 @@ public class Node {
     public void setReferenceToNextNode( Node referenceToNextNode) {
         this.referenceToNextNode = referenceToNextNode;
     }
-
+    
     public Object getCargoReference() {
         return cargoReference;
     }

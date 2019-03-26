@@ -4,26 +4,28 @@
 
 public class List_inChainOfNodes{
     private Node headReference;
+
     /**
       Construct an empty list
+      The default constructor is fine:
+      take zero arguments
+      do nothing
      */
-
-    public List_inChainOfNodes(){
-    }
-
 
     /**
       @return the number of elements in this list
      */
     public int size() {
-        int output = 0;
-        Node currentNode = new Node(headReference);
-        currentNode = headReference;
-        while (currentNode != null){
-            currentNode = currentNode.getReferenceToNextNode();
-            output ++;
-        }
-        return output;
+        // recursive approach seems more perspicuous
+        if( headReference == null) return 0;
+        else return size( headReference);
+    }
+
+    // recursively-called helper
+    private int size( Node startingAt) {
+        Node next = startingAt.getReferenceToNextNode();
+        if( next == null) return 1;
+        else return 1+ size( next);
     }
 
 
@@ -33,15 +35,13 @@ public class List_inChainOfNodes{
            # elements [element0,element1,element2,]
       */
     public String toString() {
-        String output = "[";
-        int counter = 0;
-        Node currentNode = headReference;
-        while (counter < size()){
-            output += currentNode.getCargoReference();
-            counter++;
-            currentNode = currentNode.getReferenceToNextNode();
-        }
-        return output + "]";
+        String stringRep = size() + " elements [";
+
+        for( Node node = headReference
+           ; node != null
+           ; node = node.getReferenceToNextNode() )
+            stringRep += node.getCargoReference() + ",";
+        return stringRep + "]";
     }
 
 
@@ -51,9 +51,7 @@ public class List_inChainOfNodes{
       @return true, in keeping with conventions yet to be discussed
      */
      public boolean addAsHead( Object val) {
-         Node placeholder = headReference;
-         headReference = new Node(val, placeholder);
-
+        headReference = new Node( val, headReference);
         return true;
      }
 }
