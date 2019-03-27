@@ -23,18 +23,41 @@ public class UserOfList {
         }
         System.out.println( "populated list: " + list
                           + System.lineSeparator());
+                          
         // get()
+        System.out.println("get() testing");
         System.out.println(list.get(2));
+        
         // set()
+        System.out.println("set() testing");
         list.set(2, "a");
         System.out.println( "populated list: " + list
                           + System.lineSeparator());
+        list.set(0, "s");    
+        System.out.println( "populated list: " + list
+                          + System.lineSeparator());            
         // add()
+        System.out.println("add() testing");
         list.add(2, "u");
         System.out.println( "populated list: " + list
                           + System.lineSeparator());
+        list.add(0, "a");
+        System.out.println( "populated list: " + list
+                          + System.lineSeparator());
+                          
+         list.add(5, "a");
+        System.out.println( "populated list: " + list
+                          + System.lineSeparator());
+        
         // remove()
-        list.remove(2);
+        System.out.println("remove() testing");
+        list.remove(3);
+        System.out.println( "populated list: " + list
+                          + System.lineSeparator());
+        list.remove(0);
+        System.out.println( "populated list: " + list
+                          + System.lineSeparator());
+        list.remove(4);
         System.out.println( "populated list: " + list
                           + System.lineSeparator());
         
